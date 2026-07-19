@@ -9,31 +9,31 @@ int main(){
     printf("123456789012345678901234567890\n");
 
     // %s          พิมพ์ string ปกติ ไม่จำกัดความกว้างหรือตัดคำ
-    printf("%s*\n", text);
+    printf("1%s*\n", text);
 
     // %20s        width=20 (ความกว้างขั้นต่ำของช่อง) ชิดขวาโดย default ถ้าสั้นกว่าจะเติมช่องว่างนำหน้า
-    printf("%20s*\n", text);
+    printf("2%20s*\n", text);
 
     // %.20s       precision=20 (จำนวนตัวอักษรสูงสุดที่ดึงมาแสดง) ในที่นี้ string สั้นกว่า 20 จึงแสดงครบ
-    printf("%.20s*\n", text);
+    printf("3%.20s*\n", text);
 
     // %-20s       width=20 เหมือนกัน แต่มี - นำหน้า = ชิดซ้าย เติมช่องว่างด้านหลังแทน
-    printf("%-20s*\n", text);
+    printf("4%-20s*\n", text);
 
     // %.10s       precision=10 ตัดข้อความให้เหลือ 10 ตัวอักษรแรกเท่านั้น
-    printf("%.10s*\n", text);
+    printf("5%.10s*\n", text);
 
     // %-10s       width=10 ชิดซ้าย (string ยาวกว่า width อยู่แล้วจึงไม่มีช่องว่างเพิ่ม)
-    printf("%-10s*\n", text);
+    printf("6%-10s*\n", text);
 
     // %25.10s     width=25 + precision=10: ตัดเหลือ 10 ตัวอักษรก่อน แล้วจัดชิดขวาในช่องกว้าง 25
-    printf("%25.10s*\n", text);
+    printf("7%25.10s*\n", text);
 
     // %25.5s      เหมือนด้านบนแต่ precision=5 จึงตัดเหลือแค่ 5 ตัวอักษร
-    printf("%25.5s*\n", text);
+    printf("8%25.5s*\n", text);
 
     // %-25.10s    width=25 + precision=10 แต่ชิดซ้ายเพราะมี -
-    printf("%-25.10s*\n", text);
+    printf("9%-25.10s*\n", text);
 
 
     return 0;
