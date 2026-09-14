@@ -12,7 +12,12 @@ typedef struct DataNode {
 DataNode* createDataNode(char* data) {
   // Your code here
   DataNode* new_node = (DataNode*) malloc (sizeof(DataNode));
-  strcpy(new_node,data);
+  new_node->data = (char*) malloc (strlen(data) + 1);
+  strcpy((*new_node).data,data);
+//   printf("%s",(*new_node).data);
+//   (*new_node).next = NULL;
+
+  return new_node;
 }
 
 int main() {
