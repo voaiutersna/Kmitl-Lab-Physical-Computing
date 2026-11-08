@@ -60,19 +60,33 @@ void insert_last(SinglyLinkedList *list, char *data){
     list->count += 1;
 }
 
+void insert_front(SinglyLinkedList* list, char* data) {
+    
+    DataNode* node = createDataNode(data);
+    if(list->head == NULL){
+        list->head = node;
+        list->count+=1;
+        return;
+    }
+
+    DataNode* prev_node = list->head;
+    list->head = node;
+    node->next = prev_node;
+    list->count += 1;
+}
+
 
 int main() {
     SinglyLinkedList* mylist = createSinglyLinkedList();
     int n;
     char condition;
-    char data[101];
+    char data[100]; 
     scanf("%d", &n);
 
     for (int i = 0; i < n; i++) {
-        scanf(" %c: %[^\n]s", &condition, data);
-
+        scanf(" %c: %[^\n]s", &condition, data); 
         if (condition == 'F') {
-            ;
+            insert_front(mylist, data);
         } else if (condition == 'L') {
             insert_last(mylist, data);
         } else if (condition == 'D') {
@@ -83,9 +97,8 @@ int main() {
     }
 
     traverse(mylist);
-
     // Remember to free allocated memory for each node's data
-    DataNode *current = mylist->head;
+    DataNode* current = mylist->head;
     while (current != NULL) {
         free(current->data);
         DataNode* temp = current;
